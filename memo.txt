@@ -1,0 +1,4 @@
+npx supabase init -> supabase環境の初期化
+npx supabase start -> supabase環境をDockerで立てる
+
+この人は supabase 環境下で https://supabase.com/docs/guides/auth/server-side/nextjs を押してる
