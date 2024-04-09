@@ -1,13 +1,12 @@
-import { createClient } from "@/lib/supabase/server";
-import { Tables } from "@/types/supabase";
+import { getPosts } from "@/datas/posts";
 import { format } from "date-fns";
 
 export default async function Home() {
-  const supabase = createClient();
+  const posts = await getPosts();
 
-  const { data, error } = await supabase.from("posts").select();
-
-  const posts = data as Tables<"posts">[];
+  if (!posts) {
+    return null;
+  }
 
   return (
     <main>
