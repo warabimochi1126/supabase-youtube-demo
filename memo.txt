@@ -5,3 +5,7 @@ npx supabase start -> supabase環境をDockerで立てる
 lib/supabase/server.ts で cookies() を使ってる,cookies()を使うと絶対動的生成(SSR)になる
 middlewareはsupabaseの認証が時間経過で認証切れしてしまう時に認証状態を恒久的に更新することでログイン状態を維持する働きを持つ
 RLSポリシーに依存せずにAPI側で認証チェック + ポリシーで輩を排除というイメージ
+
+npm run supabase:generate-types が テーブルの型を生成する
+npm run supabase:generate-migration が 現在のDBをSQL文に起こしてファイルに保存.別DBに流し込むとそのままデータを保存出来る
+npm run supabase:generate-seed が 
