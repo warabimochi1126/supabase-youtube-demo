@@ -6,6 +6,12 @@ lib/supabase/server.ts で cookies() を使ってる,cookies()を使うと絶対
 middlewareはsupabaseの認証が時間経過で認証切れしてしまう時に認証状態を恒久的に更新することでログイン状態を維持する働きを持つ
 RLSポリシーに依存せずにAPI側で認証チェック + ポリシーで輩を排除というイメージ
 
+ページで直接supabaseクライアントを叩いて取得するのではなくdataレイヤーを作ってその中で取得する
+"server-only"をつけることでサーバ側で実行される事を担保する(クライアント側に露出させないという事が大事)
+
+dataレイヤーはCRUDのRが多くなるのでCUDを行いたいときはactionsレイヤーを作ってその中でCUDを行う
+これがNext.js公式が推してる
+
 npm run supabase:generate-types が テーブルの型を生成する
 npm run supabase:generate-migration が 現在のDBのテーブルを作成出来るSQL文を起こしてファイルに保存.別DBに流し込むとそのままテーブルを作成する
 npx supabase link --project-ref <project-id> で ローカルのプロジェクトをsupabaseプロジェクトに紐づける
