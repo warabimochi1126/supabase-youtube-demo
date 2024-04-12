@@ -16,6 +16,10 @@ npm run supabase:generate-types が テーブルの型を生成する
 npm run supabase:generate-migration が 現在のDBのテーブルを作成出来るSQL文を起こしてファイルに保存.別DBに流し込むとそのままテーブルを作成する
 npx supabase link --project-ref <project-id> で ローカルのプロジェクトをsupabaseプロジェクトに紐づける
 npx supabase db push で supabaseプロジェクトに対してsupabase/migrations/sql を反映させる
+
 npm run supabase:generate-seed が 現在のDBと同じデータを入れれるSQL文を起こしてファイルに保存.別DBに流し込むとそのままデータを流し込める
 
 storage はマイグレーション・プッシュの対象にならないから自分で入れる必要がある
+
+with check で自分がアップデートしようとしているDBのカラムのIDと自分のIDが同じであることを 判定している
+using で アップデートしようとしているレコードのIDと自分のID
