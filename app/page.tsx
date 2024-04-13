@@ -1,5 +1,7 @@
 import { getPosts } from "@/datas/posts";
 import { format } from "date-fns";
+import Form from "./components/form";
+import { signIn } from "@/actions/auth";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -9,7 +11,10 @@ export default async function Home() {
   }
 
   return (
-    <main>
+    <main className="container max-2xl">
+      <Form />
+
+
       <div className="space-y-2 container my-6">
         {posts.map((post) => (
           <div className="p-4 border rounded shadow-sm" key={post.id}>
