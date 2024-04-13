@@ -1,7 +1,6 @@
 import { getPosts } from "@/datas/posts";
 import { format } from "date-fns";
 import Form from "./components/form";
-import { signIn } from "@/actions/auth";
 
 export default async function Home() {
   const posts = await getPosts();
